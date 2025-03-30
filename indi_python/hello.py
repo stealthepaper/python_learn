@@ -51,11 +51,63 @@
 #     print(i, products[i])
 
 
-products = 'apple, eggs, milk, orange, bread, caviar, banana, bear, grape, cream, chicken, wine, cheese, vinegar'
-products = products.split(', ')
-for ind, obj in enumerate(products):
-    print(ind, obj)
+# products = 'apple, eggs, milk, orange, bread, caviar, banana, bear, grape, cream, chicken, wine, cheese, vinegar'
+# products = products.split(', ')
+# for ind, obj in enumerate(products):
+#     print(ind, obj)
 
-products_dir = {"apple": 3, "eggs": 2, "milk": 4, "bread": 6, "banana": 8, "grape": 13, "cream": 5}
-for i in products_dir.items():
-    print(i)
+# products_dir = {"apple": 3, "eggs": 2, "milk": 4, "bread": 6, "banana": 8, "grape": 13, "cream": 5}
+# for i in products_dir.items():
+#     print(i)
+
+# from random import randint
+# s = 0
+# for i in range(7):
+#     a = randint(1,100)
+#     s += a
+#     print(a, end=' ')
+# print()
+# print(f'Сумма значений {s}')
+
+# n = int(input())
+# s = 0
+# for i in range(n):
+#     a = int(input())
+#     s += a
+#     print('current s:', s)
+# print('total', s)
+
+# n = int(input())
+# for i in range (n, 0, -1):
+#     print(i)
+
+# quote = input("Введите фразу: ")
+# n = int(input("Введите числа: "))
+# for i in range(n):
+#     print(quote)
+
+# a = int(input())
+# b = int(input())
+# for i in range(a, b+1):
+#     if i%3 ==0 and i%5==0:
+#         print('FizzBuzz')
+#     elif i%3 ==0:
+#         print('Fizz')
+#     elif i%5 == 0:
+#         print('Buzz')
+#     else:
+#         print(i)
+
+# a = int(input())
+# b = int(input())
+# s = 0
+# for i in range(a, b+1):
+#     s = i**2
+#     print(f"Число {i}; его квадрат = {s}; его куб = {s*i}")
+
+a = int(input())
+sum = 0
+for i in range(1, a):
+    if i%3== 0 or i%5==0:
+        sum += i
+print(sum)
