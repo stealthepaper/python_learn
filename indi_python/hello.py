@@ -134,3 +134,35 @@
 #     a *= i
 # print(a)
 
+# мишка и мощный гэмблинг
+# from random import randint
+# n = int(input())
+# m = 0
+# c = 0 
+# for i in range(1, n+1):
+#     a = randint(1, 6)
+#     b = randint(1, 6)
+#     print(a, b)
+#     if a > b:
+#         m += 1
+#     elif a < b:
+#         c += 1
+#     else: 
+#         c += 1
+#         m += 1
+# if m > c:
+#     print('Mishka')
+# elif m < c:
+#     print('Chris')
+# else:
+#     print('Friendship is magic!^^')
+
+# убрать "соль"
+# n = int(input())
+# recipe = []
+# for i in range(1, n+1):
+#     quote = input()
+#     if  'соль' not in quote:
+#         recipe.append(quote)
+# print(* recipe, sep=', ')
+
