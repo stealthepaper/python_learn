@@ -105,9 +105,32 @@
 #     s = i**2
 #     print(f"Число {i}; его квадрат = {s}; его куб = {s*i}")
 
-a = int(input())
-sum = 0
-for i in range(1, a):
-    if i%3== 0 or i%5==0:
-        sum += i
-print(sum)
+# a = int(input())
+# sum = 0
+# for i in range(1, a):
+#     if i%3== 0 or i%5==0:
+#         sum += i
+# print(sum)
+
+# фигура из звездочек 
+# a = int(input())
+# for i in range(1, a+1):
+#     print('*' * i)
+# for i in range(a-1, 0, -1):
+#     print('*' * i)
+
+# сумма куюо от 50 до 100 включительно
+# a = 0 
+# summ = 0 # скорее всего можно обойтись без двух переменных и просто просуммировать внутри цикла sum
+# for i in range(50, 101):
+#     a = i*i*i
+#     summ += a
+# print(f'сумма {summ}')
+
+# фактариал числа 
+# n = int(input())
+# a = 1
+# for i in range(1, n+1):
+#     a *= i
+# print(a)
+
