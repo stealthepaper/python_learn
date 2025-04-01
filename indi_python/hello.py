@@ -166,3 +166,12 @@
 #         recipe.append(quote)
 # print(* recipe, sep=', ')
 
+# что-то про номера
+n = int(input())
+index = 0
+for i in range(1,n+1):
+    qt = input().lower()
+    index = qt.find('рок')
+    if 'рок' in qt:
+        print(i, index+1)
+
