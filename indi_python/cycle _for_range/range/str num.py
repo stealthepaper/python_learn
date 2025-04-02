@@ -5,19 +5,21 @@
 # Далее следуют N строк.
 
 # первый вариант, работает. но тупо как-то
-# n = int(input())
-# index = 0
-# for i in range(1,n+1):
-#     qt = input().lower()
-#     index = qt.find('рок')
-#     if 'рок' in qt:
-#         print(i, index+1)
+n = int(input())
+index = 0
+for i in range(n):
+    qt = input().lower()
+    index = qt.find('рок')
+    if 'рок' in qt:
+        print(i, index+1)
 
+#  дурка с энумирейт 
 n = int(input())
 qt_dic =  []
+world = 'рок'
 for i in range(n):
     qt = input().lower()
     qt_dic.append(qt)
-    for l, s in enumerate(qt_dic):
-        if 'рок' in s:
-            print(l+1, s.index('рок'))
+for l, s in enumerate(qt_dic, start=1):
+    if world in s:
+        print(l, s.index(world)+1)
