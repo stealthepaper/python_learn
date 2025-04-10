@@ -31,7 +31,7 @@
 #     print()
 
 # перебор всех пар
-fruits = ['apple', 'banana', 'orange' ]
-for i in fruits:
-    for j in range(1, 21, 5):
-        print(f'sale for {i} = {j}%')
+# fruits = ['apple', 'banana', 'orange' ]
+# for i in fruits:
+#     for j in range(1, 21, 5):
+#         print(f'sale for {i} = {j}%')
