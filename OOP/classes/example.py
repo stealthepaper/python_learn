@@ -11,9 +11,14 @@
 # print(a.model)
 
 
-class Person:
-    name = 'Ivan'
-    age = 30
+# class Person:
+#     name = 'Ivan'
+#     age = 30
 
 
-print(Person.__dict__)
+# print(Person.__dict__)
+
+class Robot:
+    pass
+
+print(setattr(Robot, 'white', 'black'))
