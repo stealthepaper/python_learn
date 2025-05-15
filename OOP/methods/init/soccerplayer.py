@@ -5,16 +5,15 @@ class SoccerPlayer:
         self.goals = 0
         self.assists = 0
     def score(self, goals = 1):
-        self.goals = goals
+        self.goals += goals
         return self.goals
     def make_assist(self, assists = 1):
-        self.assists = assists
+        self.assists += assists
         return self.assists
     def statistics(self):
-        return f'{self.surname} {self.name} - голы: {self.goals}, передачи: {self.assists}'
+        return print(f'{self.surname} {self.name} - голы: {self.goals}, передачи: {self.assists}')
 
 # Ниже код для проверки методов класса SoccerPlayer
-
 leo = SoccerPlayer('Leo', 'Messi')
 assert isinstance(leo, SoccerPlayer)
 assert leo.__dict__ == {'name': 'Leo', 'surname': 'Messi', 'goals': 0, 'assists': 0}
