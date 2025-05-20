@@ -6,7 +6,7 @@ class Worker:
         self.passport = passport
 
     def get_info(self):
-        print(f'Worker {self.name}; passport-{self.passport}')
+        return(f'Worker {self.name}; passport-{self.passport}')
 
 
 persons= [
@@ -22,3 +22,9 @@ persons= [
     ('Amber Perez', 403445, 'M', '0602870126')
 ]
 
+worker_objects = []
+for p in persons:
+    worker_objects.append(Worker(*p))
+
+for i in worker_objects:
+    print(i.get_info())
