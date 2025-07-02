@@ -53,6 +53,11 @@ class Teacher(Person):
             self.__syllabus = ["Structural biology", "Materials and interfaces"]
         return self.__syllabus
 
+    # def __make_syllabus(self):
+    #     match self:
+    #         case self.specialization == "Chemistry" and self.position != "senior lecture":
+    #             self.__syllabus = ["Organic chemistry", "Inorganic chemistry"]
+
     def __make_university_email(self):
         self.email = f'{self.name}.{self.surname}@university.com'.lower()
         return self.email
@@ -69,8 +74,45 @@ class Student(Person):
         self.endroll_subjects = []
         self.grades = {}
 
+@property
+def course(self):
+    return self.__course
+
+@course.setter
+def course(self, value):
+    if 0 > value <= 4:
+        self.__course = value
+    else:
+        raise ValueError(f'Wrong course grade {value}')
+
+@property
+def specialty(self):
+    return self.__specialty
+
+@property.setter
+def specialty(self, value):
+    specialty_list = {"Chemistry", "Biology", "Physics", "Business Studies", "Mathematics"}
+    if value in specialty_list:
+        self.__specialty = value
+    else:
+        raise ValueError (f'Wrong specialty {value}')
+
+#список предметов
+def enroll(self, subject):
+    return
+    #тут нужно это написать класс сабжектс и добавить туда метод на который мы тут сошлемся
+
+#оценки по предметам
+
+#средняя оценка
+
+#сдал не сдал (сравнение)
+
+#вывод данных об ученике
 
 
-st1 = Student()
 tc1 = Teacher("Bob", "Dilan", "professor", "Chemistry")
 print(tc1.get_data())
+
+tc2 = Teacher("Tom", "Brown", "associate proressor", "Biology")
+print(tc2.get_data())
