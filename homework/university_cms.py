@@ -89,7 +89,7 @@ def course(self, value):
 def specialty(self):
     return self.__specialty
 
-@property.setter
+@specialty.setter
 def specialty(self, value):
     specialty_list = {"Chemistry", "Biology", "Physics", "Business Studies", "Mathematics"}
     if value in specialty_list:
@@ -109,6 +109,35 @@ def enroll(self, subject):
 #сдал не сдал (сравнение)
 
 #вывод данных об ученике
+
+class Subjects:
+    def __init__(self, title):
+        self.title = title
+        self.teacher = None
+        self.students = []
+    
+    @property
+    def title(self):
+        return self.title
+    
+    @title.setter
+    def title(self, value):
+        title_list = {"Chemistry", "Biology", "Physics", "Business Studies", "Mathematics"}
+        if value in title_list:
+            self.title = value
+        else:
+            raise ValueError(f'Wrong subjects titile {value}')
+
+    def add_teacher(self, teacher):
+        self.teacher = teacher
+
+    def add_student(self, student):
+        if student not in self.students:
+            self.students.append(student)
+            student.grades.setdefault(self, [])
+
+    def subjects_data(self):
+        return
 
 
 tc1 = Teacher("Bob", "Dilan", "professor", "Chemistry")
