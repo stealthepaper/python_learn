@@ -53,11 +53,6 @@ class Teacher(Person):
             self.__syllabus = ["Structural biology", "Materials and interfaces"]
         return self.__syllabus
 
-    # def __make_syllabus(self):
-    #     match self:
-    #         case self.specialization == "Chemistry" and self.position != "senior lecture":
-    #             self.__syllabus = ["Organic chemistry", "Inorganic chemistry"]
-
     def __make_university_email(self):
         self.email = f'{self.name}.{self.surname}@university.com'.lower()
         return self.email
@@ -99,8 +94,7 @@ def specialty(self, value):
 
 #список предметов
 def enroll(self, subject):
-    return
-    #тут нужно это написать класс сабжектс и добавить туда метод на который мы тут сошлемся
+    subject.add_student(self) #тут нужно это написать класс сабжектс и добавить туда метод на который мы тут сошлемся
 
 #оценки по предметам
 
@@ -118,30 +112,77 @@ class Subjects:
     
     @property
     def title(self):
-        return self.title
+        return self.__title
     
     @title.setter
     def title(self, value):
-        title_list = {"Chemistry", "Biology", "Physics", "Business Studies", "Mathematics"}
-        if value in title_list:
-            self.title = value
+        subjects_and_speality = {
+            "Organic chemistry": "Chemistry",
+            "Inorganic chemistry": "Chemistry",
+            "Materials and interfaces": "Chemistry",
+            "Biochemistry and cell biology": "Biology",
+            "Neurobiology": "Biology",
+            "Structural biology": "Biology",
+            "Physics of soft matter": "Physics",
+            "Physical chemistry": "Physics",
+            "Biophysics": "Physics",
+            "Economic and Business statistics": "Business Studies",
+            "Economic Principles": "Business Studies",
+            "Geometry in Physics": "Mathematics",
+            "Mathematical relativity": "Mathematics", 
+            "Mathematical Statistical Physics": "Mathematics"
+        }
+        if value in subjects_and_speality:
+            self.__title = value
         else:
             raise ValueError(f'Wrong subjects titile {value}')
+    
+    def add_speciality(self):
+        subjects_and_speality = {
+            "Organic chemistry": "Chemistry",
+            "Inorganic chemistry": "Chemistry",
+            "Materials and interfaces": "Chemistry",
+            "Biochemistry and cell biology": "Biology",
+            "Neurobiology": "Biology",
+            "Structural biology": "Biology",
+            "Physics of soft matter": "Physics",
+            "Physical chemistry": "Physics",
+            "Biophysics": "Physics",
+            "Economic and Business statistics": "Business Studies",
+            "Economic Principles": "Business Studies",
+            "Geometry in Physics": "Mathematics",
+            "Mathematical relativity": "Mathematics", 
+            "Mathematical Statistical Physics": "Mathematics"
+        }
+        self.specialty = subjects_and_speality.get(self.title, 'The subjects is ot include in specialties')
+        return self.specialty
+        
 
     def add_teacher(self, teacher):
-        self.teacher = teacher
+        if isinstance(teacher, Teacher):
+            self.teacher = teacher
+        else: 
+            raise ValueError(f'Wrong class of {teacher}')
 
     def add_student(self, student):
         if student not in self.students:
             self.students.append(student)
             student.grades.setdefault(self, [])
 
-    def subjects_data(self):
-        return
+    def __str__(self):
+        teacher = self.teacher.name if self.teacher else 'None'
+        return f' Subject: {self.title}\n Specialty: {self.add_speciality()}\n Teacher: {teacher}\n Students: {len(self.students)}'
 
 
 tc1 = Teacher("Bob", "Dilan", "professor", "Chemistry")
 print(tc1.get_data())
 
+print ()
 tc2 = Teacher("Tom", "Brown", "associate proressor", "Biology")
 print(tc2.get_data())
+
+print()
+sb1 = Subjects('Mathematical relativity')
+sb1.add_teacher(tc2)
+print(sb1)
+
